@@ -72,7 +72,7 @@ class CoursebookScraper extends FirefoxScraper {
     };
 
     // Grab professor data obtained from profile scraper
-    private ScrapedProfessors: schemas.Professor[] = JSON.parse(readFileSync("./data/Professors.json", { encoding: "utf-8" }));
+    private ScrapedProfessors: schemas.Professor[] = JSON.parse(readFileSync("./scraper/data/Professors.json", { encoding: "utf-8" }));
 
     // Caches for the scraped course/section data
     private Courses: Map<string, schemas.Course> = new Map<string, schemas.Course>();
@@ -579,11 +579,11 @@ class CoursebookScraper extends FirefoxScraper {
 };
 
 // Load Selenium config
-
+/*
 const options = new firefox.Options();
 const service = new firefox.ServiceBuilder(process.env.SELENIUM_DRIVER);
 let CBScraper = new CoursebookScraper(options, service);
 
 CBScraper.Scrape(/2022 Spring/g).then(() => {
     CBScraper.Kill();
-});
+});*/
