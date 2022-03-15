@@ -72,7 +72,7 @@ class CoursebookScraper extends FirefoxScraper {
     };
 
     // Grab professor data obtained from profile scraper
-    private ScrapedProfessors: schemas.Professor[] = JSON.parse(readFileSync("./scraper/data/Professors.json", { encoding: "utf-8" }));
+    private ScrapedProfessors: schemas.Professor[] = JSON.parse(readFileSync("./data/Professors.json", { encoding: "utf-8" }));
 
     // Caches for the scraped course/section data
     private Courses: Map<string, schemas.Course> = new Map<string, schemas.Course>();
