@@ -122,6 +122,7 @@ class CoursebookScraper extends FirefoxScraper {
 
         // If captcha box found, wait for the user to solve it before continuing
         if (CaptchaIFrame) {
+            console.log('CAPTCHA encountered (rip headless users)');
             // Switch active frame to the captcha's iframe
             this.Driver.switchTo().frame(CaptchaIFrame);
             let CheckedBox: WebElement = null;
