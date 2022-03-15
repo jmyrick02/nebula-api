@@ -581,6 +581,7 @@ class CoursebookScraper extends FirefoxScraper {
 // Load Selenium config
 
 const options = new firefox.Options();
+options.addArguments("-headless");
 const service = new firefox.ServiceBuilder(process.env.SELENIUM_DRIVER);
 let CBScraper = new CoursebookScraper(options, service);
 
