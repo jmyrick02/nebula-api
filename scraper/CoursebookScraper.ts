@@ -579,11 +579,11 @@ class CoursebookScraper extends FirefoxScraper {
 };
 
 // Load Selenium config
-/*
+
 const options = new firefox.Options();
 const service = new firefox.ServiceBuilder(process.env.SELENIUM_DRIVER);
 let CBScraper = new CoursebookScraper(options, service);
 
 CBScraper.Scrape(/2022 Spring/g).then(() => {
     CBScraper.Kill();
-});*/
+});
