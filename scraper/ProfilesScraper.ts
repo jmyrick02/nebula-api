@@ -128,7 +128,6 @@ class ProfilesScraper extends FirefoxScraper {
             } catch (error: NoSuchElementError) {
                 continue;
             }
-            console.log(email);
 
             const tempDiv: WebElement = await this.Driver.findElement(By.xpath('//div[not(@class)]'));
             let texts: Array<string> = (await tempDiv.getText()).split('\n');
