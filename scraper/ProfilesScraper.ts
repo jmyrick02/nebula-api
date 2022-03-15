@@ -88,7 +88,6 @@ class ProfilesScraper extends FirefoxScraper {
 
     async Scrape(): Promise<void> {
         const professorLinks: Array<string> = await this.scrapeProfessorLinks();
-        //const professorLinks: Array<string> = ['https://profiles.utdallas.edu/herve.abdi'];
 
         for (const link of professorLinks) {
             await this.Driver.get(link);
@@ -129,6 +128,7 @@ class ProfilesScraper extends FirefoxScraper {
             } catch (error: NoSuchElementError) {
                 continue;
             }
+            console.log(email);
 
             const tempDiv: WebElement = await this.Driver.findElement(By.xpath('//div[not(@class)]'));
             let texts: Array<string> = (await tempDiv.getText()).split('\n');
@@ -175,6 +175,7 @@ class ProfilesScraper extends FirefoxScraper {
 
 // Load Selenium config
 const options = new firefox.Options();
+options.addArguments("-headless");
 const service = new firefox.ServiceBuilder(process.env.SELENIUM_DRIVER);
 const profiles_scraper = new ProfilesScraper(options, service);
 
