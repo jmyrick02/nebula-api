@@ -58,9 +58,9 @@ class ProfilesScraper extends FirefoxScraper {
             names.length > 2 &&
             (ultimateName === 'jr' ||
                 ultimateName === 'sr' ||
-                ultimateName === 'I' ||
-                ultimateName === 'II' ||
-                ultimateName === 'III')
+                ultimateName === 'i' ||
+                ultimateName === 'ii' ||
+                ultimateName === 'iii')
         ) {
             names.pop();
         }
@@ -88,7 +88,6 @@ class ProfilesScraper extends FirefoxScraper {
 
     async Scrape(): Promise<void> {
         const professorLinks: Array<string> = await this.scrapeProfessorLinks();
-        //const professorLinks: Array<string> = ['https://profiles.utdallas.edu/herve.abdi'];
 
         for (const link of professorLinks) {
             await this.Driver.get(link);

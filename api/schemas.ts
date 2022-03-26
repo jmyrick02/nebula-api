@@ -112,7 +112,7 @@ module schemas {
         attributes: Object
     }
 
-    export type DegreeSubtype = "major" | "minor" | "concentration" | "prescribed double major";
+    export type DegreeSubtype = "major" | "minor" | "concentration" | "prescribed double major" | "certificate" | "track";
 
     export interface Degree extends MongoStored {
         subinterface: DegreeSubtype,

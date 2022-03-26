@@ -271,7 +271,8 @@ class CoursebookScraper extends FirefoxScraper {
             InstructorInstance = await InstructorInstance.findElement(By.css("div"));
         } catch (error: NoSuchElementError) { return };
         // Iterate by updating the InstructorElement with recursive searches until search fails
-        while (true) {
+        let temp = true;
+        while (temp) {
             try {
                 let NestedDivs: WebElement[] = await InstructorInstance.findElements(By.css("div"));
                 let InstructorElement: WebElement = NestedDivs[0];
@@ -308,7 +309,8 @@ class CoursebookScraper extends FirefoxScraper {
             AssistantInstance = await AssistantInstance.findElement(By.css("div"));
         } catch (error: NoSuchElementError) { return };
         // Iterate by updating the AssistantElement with recursive searches until search fails
-        while (true) {
+        let temp = true;
+        while (temp) {
             try {
                 let NestedDivs: WebElement[] = await AssistantInstance.findElements(By.css("div"));
                 let AssistantElement: WebElement = NestedDivs[0];
@@ -579,11 +581,11 @@ class CoursebookScraper extends FirefoxScraper {
 };
 
 // Load Selenium config
-
+/*
 const options = new firefox.Options();
 const service = new firefox.ServiceBuilder(process.env.SELENIUM_DRIVER);
 let CBScraper = new CoursebookScraper(options, service);
 
 CBScraper.Scrape(/2022 Spring/g).then(() => {
     CBScraper.Kill();
-});
+});*/
